@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Comunicação e trabalho em equipe – Estudo e quiz</title>
+<style>
+:root{--bg:#f3f6f4;--card:#fff;--ink:#16302b;--mut:#51655f;--ac:#0f766e;--ac2:#e0f2ef;--q:#fff4d6;--qi:#5c4300;--ln:#cfdcd7;--ok:#d9f2df;--okb:#1a7f3c;--no:#fde0dd;--nob:#b3261e;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10201d;--card:#183029;--ink:#e6f1ee;--mut:#9db5ae;--ac:#4fd1c0;--ac2:#1f4039;--q:#3a3015;--qi:#f3dc9a;--ln:#2d4a43;--ok:#1b4a2c;--okb:#6fdc8c;--no:#4d2420;--nob:#ff9a90}}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Georgia,"Times New Roman",serif}
+h1,h2,button,select,.tag{font-family:"Trebuchet MS",Verdana,sans-serif}
+header{padding:28px 18px 8px;max-width:820px;margin:auto}
+h1{margin:0 0 6px;font-size:1.7rem;line-height:1.2}
+header p{margin:0;color:var(--mut)}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--ln);padding:10px 18px}
+.bar>div{max-width:820px;margin:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+button,select{font-size:.95rem;border:1px solid var(--ln);background:var(--card);color:var(--ink);border-radius:8px;padding:8px 12px;cursor:pointer}
+button:focus-visible,select:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+.tab[aria-selected=true]{background:var(--ac);color:#fff;border-color:var(--ac)}
+@media (prefers-color-scheme:dark){.tab[aria-selected=true]{color:#06231f}}
+.play{background:var(--ac2);font-weight:700}
+main{max-width:820px;margin:auto;padding:14px 18px 60px}
+article,.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:18px;margin:0 0 16px}
+article.on{border-color:var(--ac);box-shadow:0 0 0 3px var(--ac2)}
+h2{margin:0 0 8px;font-size:1.2rem}
+.tag{font-size:.8rem;color:var(--mut);margin-bottom:2px}
+article p,.box p{margin:0 0 10px;max-width:70ch}
+.ex{border-left:4px solid var(--ac);padding-left:12px;color:var(--mut)}
+.q{background:var(--q);color:var(--qi);border-radius:8px;padding:10px 12px}
+.opt{display:block;width:100%;text-align:left;margin:0 0 8px;padding:12px 14px;font-size:1rem;font-family:Georgia,serif}
+.opt.ok{background:var(--ok);border-color:var(--okb)}
+.opt.no{background:var(--no);border-color:var(--nob)}
+.fb{margin:10px 0;font-weight:700;font-family:"Trebuchet MS",Verdana,sans-serif}
+.big{font-size:2rem;font-weight:700;font-family:"Trebuchet MS",Verdana,sans-serif}
+#st{font-size:.9rem;color:var(--mut)}
+</style>
+</head>
+<body>
+<header><h1 id="h"></h1><p>Ensino Médio Técnico em Administração, 4º bimestre. Leia, escute ou teste o que aprendeu.</p></header>
+<div class="bar"><div>
+<button class="tab" role="tab" id="ts">Estudar</button>
+<button class="tab" role="tab" id="tq">Quiz</button>
+</div><div style="margin-top:8px">
+<span id="cs"><button class="play" id="all">▶ Ouvir tudo</button> <button id="pp">⏸ Pausar</button> <button id="stop">⏹ Parar</button></span>
+<label id="cq" hidden><input type="checkbox" id="auto"> Ler as perguntas em voz alta</label>
+<label>Velocidade <select id="rate"><option value="0.8">Lenta</option><option value="1" selected>Normal</option><option value="1.25">Rápida</option></select></label>
+<span id="st" aria-live="polite"></span>
+</div></div>
+<main id="m"></main>
+<script>
+const S={"n": "Comunicação e trabalho em equipe", "t": [["Motivação no ambiente de trabalho", "Motivação é o que nos dá vontade de agir, aprender e participar. No trabalho, as pessoas precisam de boas condições e de perceber que seu esforço tem valor. Salário e segurança atendem necessidades básicas; respeito e acolhimento criam sentimento de grupo; aprendizado e reconhecimento aumentam a dedicação.", "Em um estágio com pagamento em dia, mas sem explicação das tarefas, orientação e retorno ajudam o estagiário a aprender mais.", "O que motiva as pessoas no trabalho além do salário?", ["Além de salário e segurança, o que também aumenta a motivação?", "Aprendizado e reconhecimento", "Cobrança constante", "Isolamento", "Ausência de regras"]], ["Necessidades de Maslow", "Maslow organizou as necessidades humanas em cinco níveis: fisiológicas (alimentação, água, descanso), segurança (proteção e estabilidade), sociais (amizade e pertencimento), estima (respeito e reconhecimento) e autorrealização (desenvolver capacidades e alcançar objetivos). As básicas costumam receber mais atenção quando não estão atendidas, e várias podem aparecer juntas.", "Quem se preocupa com a falta de comida pode ter dificuldade de se concentrar em um curso.", "Quais são os cinco níveis de necessidades de Maslow?", ["Qual nível de Maslow se liga a respeito e reconhecimento?", "Estima", "Segurança", "Sociais", "Fisiológicas"]], ["Teoria dos dois fatores de Herzberg", "Herzberg separou os fatores do trabalho em dois grupos. Os higiênicos, como salário, segurança, regras claras e boas condições, ajudam a evitar a insatisfação. Os motivacionais, como reconhecimento, responsabilidade, realização e crescimento, favorecem a satisfação. Maslow destaca necessidades humanas; Herzberg diferencia fatores de insatisfação e de satisfação.", "Uma empresa paga em dia e é segura, mas as tarefas não ensinam nada: reconhecer contribuições e oferecer desenvolvimento melhora a satisfação.", "Qual a diferença entre fatores higiênicos e motivacionais?", ["Pela teoria de Herzberg, reconhecimento e crescimento são fatores:", "Motivacionais", "Higiênicos", "Fisiológicos", "Burocráticos"]], ["Protagonismo e responsabilidade", "Ser protagonista é participar ativamente da própria trajetória: tomar iniciativa, aprender e assumir responsabilidade pelas escolhas e resultados. Isso inclui cumprir combinados, comunicar dificuldades, sugerir melhorias, pedir ajuda, buscar novas habilidades e reconhecer erros para corrigi-los.", "Faltam materiais para a apresentação; você conversa com os colegas e propõe uma divisão de tarefas.", "O que significa ser protagonista no trabalho em equipe?", ["Qual atitude representa protagonismo?", "Perceber um problema e sugerir melhorias", "Esperar ordens", "Esconder um erro", "Evitar pedir ajuda"]], ["Assertividade e relações", "Assertividade é expressar pensamentos, sentimentos e necessidades com clareza e respeito, ouvindo o outro e estabelecendo limites. A postura agressiva ataca ou ofende; a passiva deixa de expressar o que precisa; a assertiva explica o problema e busca uma solução respeitosa. É possível pedir ajuda, discordar e dizer não com educação.", "Em vez de “Você nunca ajuda!”, diga: “Sua parte ainda não chegou e precisamos terminar hoje. Você consegue entregar até as 16h?”.", "Qual a diferença entre postura agressiva, passiva e assertiva?", ["Qual frase é assertiva?", "“Sua parte ainda não chegou. Você consegue entregar até as 16h?”", "“Você nunca ajuda!”", "“Tudo bem, eu faço tudo sozinho.”", "“Faça isso logo.”"]], ["Tipos de relatórios empresariais", "Relatórios reúnem informações para acompanhar resultados e apoiar decisões. Há relatórios de controle (estoque, processos, metas), de satisfação (opinião de clientes ou equipe), de análise (problemas e resultados), financeiros (receitas, despesas, lucro, caixa), de gestão de pessoas (faltas e desempenho) e de estratégia e crescimento.", "Para saber por que os clientes reclamam, a loja consulta um relatório de satisfação.", "Cite pelo menos quatro tipos de relatórios empresariais e para que servem.", ["Qual relatório mostra receitas, despesas, lucro e fluxo de caixa?", "Financeiro", "De satisfação", "De controle", "De gestão de pessoas"]], ["Como elaborar um relatório", "Um bom relatório tem objetivo definido, dados confiáveis e explicações organizadas. Antes de escrever, pense no assunto e em quem vai ler. Etapas: planejar e coletar informações; introdução (assunto e objetivo); desenvolvimento (dados e análise); conclusão (resultados e recomendações); revisar, apresentar e ajustar.", "Para analisar a demora no atendimento, apresente o problema, reúna registros de espera e comentários e proponha uma melhoria acompanhável.", "Quais partes compõem um relatório e o que vai em cada uma?", ["Qual parte do relatório apresenta o assunto e o objetivo?", "Introdução", "Conclusão", "Desenvolvimento", "Revisão"]], ["Reuniões produtivas", "Uma reunião produtiva tem objetivo claro e ajuda a equipe a decidir. Antes: definir pauta, participantes e tempo, e compartilhar informações. Durante: ouvir, estimular a participação, manter o foco e respeitar o tempo. Depois: registrar decisões, responsáveis e prazos.", "Na organização de uma feira escolar, o grupo combina quem faz os cartazes, quem cuida dos materiais e a data de entrega.", "O que fazer antes, durante e depois de uma reunião para que ela seja produtiva?", ["O que fazer depois de uma reunião produtiva?", "Registrar decisões, responsáveis e prazos", "Esquecer o assunto", "Marcar outra sem pauta", "Apagar as anotações"]], ["Decisões com base em informações", "Decidir com base em informações é observar os dados, entender o problema e escolher uma ação que faça sentido. Observe o que melhorou ou piorou, analise causas, escolha e justifique a ação, defina o que fazer, quem e quando, e acompanhe se houve melhora.", "Uma loja recebe reclamações de demora nas respostas: vale investigar o atendimento, pois mais postagens trariam clientes sem resolver a demora.", "Quais são os passos para tomar uma decisão com base em dados?", ["Qual é a primeira etapa para decidir com base em informações?", "Observar o que os dados mostram", "Escolher a ação", "Acompanhar os resultados", "Definir o prazo"]], ["Apresentação e feedback", "Apresentar um relatório é explicar suas informações e conclusões a outras pessoas: organize com começo, meio e fim, fale com clareza e use dados para justificar. Feedback é um retorno sobre o que funcionou e o que pode melhorar; ouça com atenção, analise e faça ajustes úteis.", "Um colega diz que a explicação ficou clara, mas os números estavam pequenos; o grupo aumenta a fonte na próxima versão.", "Como apresentar bem um relatório e como usar o feedback recebido?", ["O que é feedback?", "Um retorno sobre o que funcionou e o que pode melhorar", "Uma punição", "Uma nota final", "Um tipo de relatório financeiro"]]]},T=S.t,syn=window.speechSynthesis;
+const $=i=>document.getElementById(i),m=$('m'),st=$('st');
+let mode='s',tok=0,pl=false,pa=false,L=[],k=0,qu=[],qx=0,sc=0,miss=[],cur=null;
+$('h').textContent=S.n;
+function say(text,done){if(!syn)return;syn.cancel();const my=++tok,u=new SpeechSynthesisUtterance(text);u.lang='pt-BR';u.rate=+$('rate').value;const v=syn.getVoices().find(v=>/^pt-br/i.test(v.lang));if(v)u.voice=v;u.onend=()=>{if(my===tok&&done)done()};syn.speak(u)}
+function stop(){tok++;if(syn)syn.cancel();pl=false;pa=false;document.querySelectorAll('article.on').forEach(a=>a.classList.remove('on'));st.textContent='';$('pp').textContent='⏸ Pausar'}
+function txt(t){return t[0]+". "+t[1]+" Exemplo: "+t[2]+" Pergunta geral: "+t[3]}
+function study(){
+ mode='s';stop();$('ts').setAttribute('aria-selected',true);$('tq').setAttribute('aria-selected',false);$('cs').hidden=false;$('cq').hidden=true;
+ m.innerHTML=T.map((t,i)=>`<article id="a${i}"><div class="tag">Tema ${i+1} de ${T.length}</div><h2>${t[0]}</h2><p>${t[1]}</p><p class="ex"><b>Exemplo:</b> ${t[2]}</p><p class="q"><b>Pergunta geral:</b> ${t[3]}</p><button data-i="${i}">🔊 Ouvir este tema</button></article>`).join('');
+}
+function play(list){
+ stop();pl=true;L=list;k=0;
+ (function nx(){if(!pl||k>=L.length){stop();return}const i=L[k++];
+  document.querySelectorAll('article.on').forEach(a=>a.classList.remove('on'));
+  const a=$('a'+i);a.classList.add('on');a.scrollIntoView({behavior:'smooth',block:'center'});st.textContent='Lendo tema '+(i+1);
+  say(txt(T[i]),nx)})();
+}
+const sh=a=>a.slice().sort(()=>Math.random()-.5);
+function startQ(ids){
+ mode='q';stop();$('tq').setAttribute('aria-selected',true);$('ts').setAttribute('aria-selected',false);$('cs').hidden=true;$('cq').hidden=false;
+ qu=sh(ids);qx=0;sc=0;miss=[];showQ();
+}
+function showQ(){
+ if(qx>=qu.length)return endQ();
+ const i=qu[qx],z=T[i][4],o=sh([1,2,3,4]);cur={i,o,done:false};
+ m.innerHTML=`<div class="box"><div class="tag">Pergunta ${qx+1} de ${qu.length} · Acertos: ${sc}</div><h2>${z[0]}</h2>`+
+  o.map((j,n)=>`<button class="opt" data-n="${n}">${'ABCD'[n]}) ${z[j]}</button>`).join('')+
+  `<div class="fb" id="fb" aria-live="polite"></div><button id="rd">🔊 Ouvir pergunta</button> <button id="nx" hidden>Próxima ▶</button></div>`;
+ if($('auto').checked)readQ();
+}
+function readQ(){const z=T[cur.i][4];say(z[0]+". "+cur.o.map((j,n)=>"Alternativa "+'ABCD'[n]+": "+z[j]).join(". "))}
+function answer(n){
+ if(cur.done)return;cur.done=true;const z=T[cur.i][4],right=cur.o.indexOf(1),ok=n===right;
+ document.querySelectorAll('.opt').forEach((b,x)=>{b.disabled=true;if(x===right){b.classList.add('ok');b.textContent='✓ '+b.textContent}else if(x===n){b.classList.add('no');b.textContent='✗ '+b.textContent}});
+ let f;if(ok){sc++;f='Correto!'}else{miss.push(cur.i);f='Não foi dessa vez. Resposta certa: alternativa '+'ABCD'[right]+'. Revise o tema: '+T[cur.i][0]+'.'}
+ $('fb').textContent=f;$('nx').hidden=false;$('nx').focus();
+ if($('auto').checked)say(f+" Toque em próxima para continuar.");
+}
+function endQ(){
+ stop();const p=Math.round(100*sc/qu.length);
+ m.innerHTML=`<div class="box"><div class="tag">Quiz finalizado</div><div class="big">${sc} de ${qu.length} (${p}%)</div><p>${p>=80?'Excelente! Você domina bem esta matéria.':p>=50?'Bom caminho. Revise os temas errados e tente de novo.':'Vale reler a matéria no modo Estudar e refazer o quiz.'}</p>`+
+ (miss.length?`<p><b>Temas para revisar:</b></p><ul>${miss.map(i=>`<li>${T[i][0]}</li>`).join('')}</ul><button class="play" id="rm">Refazer só as erradas</button> `:'')+
+ `<button id="ra">Refazer tudo</button> <button id="gs">Voltar a estudar</button></div>`;
+ if($('auto').checked)say("Quiz finalizado. Você acertou "+sc+" de "+qu.length+".");
+}
+m.onclick=e=>{const b=e.target.closest('button');if(!b)return;
+ if(b.dataset.i!==undefined&&syn)play([+b.dataset.i]);
+ else if(b.classList.contains('opt'))answer(+b.dataset.n);
+ else if(b.id==='nx'){qx++;showQ()}
+ else if(b.id==='rd')readQ();
+ else if(b.id==='rm')startQ(miss.slice());
+ else if(b.id==='ra')startQ(T.map((_,i)=>i));
+ else if(b.id==='gs')study();
+};
+$('ts').onclick=study;$('tq').onclick=()=>startQ(T.map((_,i)=>i));
+$('all').onclick=()=>{if(syn)play(T.map((_,i)=>i))};
+$('stop').onclick=stop;
+$('pp').onclick=function(){if(!pl)return;if(pa){syn.resume();pa=false;this.textContent='⏸ Pausar'}else{syn.pause();pa=true;this.textContent='▶ Continuar'}};
+$('rate').onchange=()=>{if(pl&&!pa){const r=L.slice(k-1);play(r)}};
+if(!syn)st.textContent='Seu navegador não suporta leitura em voz alta.';
+study();
+</script>
+</body>
+</html>

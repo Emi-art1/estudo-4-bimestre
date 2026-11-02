@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Negócios, inovação e experiência do cliente – Estudo e quiz</title>
+<style>
+:root{--bg:#f3f6f4;--card:#fff;--ink:#16302b;--mut:#51655f;--ac:#0f766e;--ac2:#e0f2ef;--q:#fff4d6;--qi:#5c4300;--ln:#cfdcd7;--ok:#d9f2df;--okb:#1a7f3c;--no:#fde0dd;--nob:#b3261e;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10201d;--card:#183029;--ink:#e6f1ee;--mut:#9db5ae;--ac:#4fd1c0;--ac2:#1f4039;--q:#3a3015;--qi:#f3dc9a;--ln:#2d4a43;--ok:#1b4a2c;--okb:#6fdc8c;--no:#4d2420;--nob:#ff9a90}}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Georgia,"Times New Roman",serif}
+h1,h2,button,select,.tag{font-family:"Trebuchet MS",Verdana,sans-serif}
+header{padding:28px 18px 8px;max-width:820px;margin:auto}
+h1{margin:0 0 6px;font-size:1.7rem;line-height:1.2}
+header p{margin:0;color:var(--mut)}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--ln);padding:10px 18px}
+.bar>div{max-width:820px;margin:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+button,select{font-size:.95rem;border:1px solid var(--ln);background:var(--card);color:var(--ink);border-radius:8px;padding:8px 12px;cursor:pointer}
+button:focus-visible,select:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+.tab[aria-selected=true]{background:var(--ac);color:#fff;border-color:var(--ac)}
+@media (prefers-color-scheme:dark){.tab[aria-selected=true]{color:#06231f}}
+.play{background:var(--ac2);font-weight:700}
+main{max-width:820px;margin:auto;padding:14px 18px 60px}
+article,.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:18px;margin:0 0 16px}
+article.on{border-color:var(--ac);box-shadow:0 0 0 3px var(--ac2)}
+h2{margin:0 0 8px;font-size:1.2rem}
+.tag{font-size:.8rem;color:var(--mut);margin-bottom:2px}
+article p,.box p{margin:0 0 10px;max-width:70ch}
+.ex{border-left:4px solid var(--ac);padding-left:12px;color:var(--mut)}
+.q{background:var(--q);color:var(--qi);border-radius:8px;padding:10px 12px}
+.opt{display:block;width:100%;text-align:left;margin:0 0 8px;padding:12px 14px;font-size:1rem;font-family:Georgia,serif}
+.opt.ok{background:var(--ok);border-color:var(--okb)}
+.opt.no{background:var(--no);border-color:var(--nob)}
+.fb{margin:10px 0;font-weight:700;font-family:"Trebuchet MS",Verdana,sans-serif}
+.big{font-size:2rem;font-weight:700;font-family:"Trebuchet MS",Verdana,sans-serif}
+#st{font-size:.9rem;color:var(--mut)}
+</style>
+</head>
+<body>
+<header><h1 id="h"></h1><p>Ensino Médio Técnico em Administração, 4º bimestre. Leia, escute ou teste o que aprendeu.</p></header>
+<div class="bar"><div>
+<button class="tab" role="tab" id="ts">Estudar</button>
+<button class="tab" role="tab" id="tq">Quiz</button>
+</div><div style="margin-top:8px">
+<span id="cs"><button class="play" id="all">▶ Ouvir tudo</button> <button id="pp">⏸ Pausar</button> <button id="stop">⏹ Parar</button></span>
+<label id="cq" hidden><input type="checkbox" id="auto"> Ler as perguntas em voz alta</label>
+<label>Velocidade <select id="rate"><option value="0.8">Lenta</option><option value="1" selected>Normal</option><option value="1.25">Rápida</option></select></label>
+<span id="st" aria-live="polite"></span>
+</div></div>
+<main id="m"></main>
+<script>
+const S={"n": "Negócios, inovação e experiência do cliente", "t": [["Canvas: o mapa do negócio", "O Business Model Canvas é um quadro que mostra como um negócio funciona, reunindo as principais decisões em uma única visão. Tem nove blocos conectados: clientes, proposta de valor, canais, relacionamento, receitas, recursos-chave, atividades-chave, parcerias-chave e custos. Mudar um bloco, como a entrega, pode alterar os custos e a experiência do cliente.", "Marmitas: clientes com pouco tempo, benefício saudável e prático, venda por Instagram e WhatsApp, receita com vendas e planos semanais.", "Quais são os nove blocos do Canvas e por que uma mudança em um deles pode afetar os outros?", ["Qual alternativa descreve o Business Model Canvas?", "Um quadro que reúne as principais decisões de como o negócio funciona", "Um contrato entre a empresa e o cliente", "Uma planilha só de custos", "Um método para contratar equipe"]], ["Análise de mercado", "Analisar o mercado é conhecer o ambiente onde o negócio vai funcionar, como conhecer as regras e os jogadores antes de entrar em um jogo. Olhamos o público-alvo, a concorrência, que oferece soluções parecidas, e as tendências, que são mudanças nos hábitos das pessoas.", "Antes de vender marmitas, perguntar quais refeições as pessoas preferem e quanto podem pagar.", "O que é analisar o mercado e quais três elementos devem ser observados?", ["O que é analisar o mercado?", "Conhecer público-alvo, concorrência e tendências antes de começar", "Copiar os preços da concorrência", "Escolher as cores da marca", "Calcular o lucro do mês"]], ["Proposta de valor", "A proposta de valor explica como o negócio ajuda o cliente e por que alguém teria interesse em comprar. Uma boa proposta resolve um problema, apresenta benefícios claros e destaca o diferencial. Para criá-la, é preciso entender as necessidades do público.", "“Marmitas saudáveis, com preço acessível e entrega no horário do almoço”: o benefício é comer bem sem cozinhar.", "O que uma boa proposta de valor precisa conter?", ["O que torna uma proposta de valor boa?", "Resolver um problema, trazer benefícios claros e destacar o diferencial", "Ter sempre o menor preço", "Usar muitas palavras técnicas", "Falar apenas da empresa"]], ["Custos, receitas e lucro", "Receita é o dinheiro obtido com as vendas. Custos e despesas são os gastos para produzir e manter o negócio. Lucro é o que sobra depois de descontar todos os gastos. Gastos fixos, como o aluguel, não variam com a quantidade vendida; gastos variáveis, como ingredientes e embalagens, acompanham a produção.", "R$ 500 em vendas menos R$ 350 em gastos resulta em R$ 150 de lucro.", "Qual a diferença entre receita e lucro, e entre gasto fixo e variável?", ["Receita de R$ 500 e gastos totais de R$ 350. Qual é o lucro?", "R$ 150", "R$ 850", "R$ 350", "R$ 500"]], ["Inovação", "Inovar é criar ou melhorar algo e colocar essa mudança em uso para gerar benefícios. Pequenos negócios também inovam. A inovação incremental melhora algo que já existe; a radical traz uma transformação profunda. As necessidades dos clientes orientam essas mudanças.", "Trocar uma embalagem que vaza por outra mais segura é uma inovação incremental.", "Qual a diferença entre inovação incremental e inovação radical?", ["Trocar uma embalagem que vaza por outra mais segura é qual tipo de inovação?", "Incremental", "Radical", "Aberta", "Nenhuma, pois é só um ajuste"]], ["Implementação da inovação", "Implementar é transformar uma ideia em algo que funciona. O processo envolve identificar o problema, planejar a solução, organizar equipe e recursos, testar, ajustar, colocar em uso e acompanhar os resultados. Podem surgir obstáculos como falta de dinheiro, problemas técnicos ou resistência da equipe; planejamento e diálogo ajudam.", "Receber pedidos pela internet exige organizar cardápio, atendimento, pagamento e entregas.", "Quais são as etapas para implementar uma inovação e que dificuldades podem aparecer?", ["Qual etapa vem logo antes de colocar a inovação em uso?", "Testar e ajustar", "Acompanhar os resultados", "Identificar o problema", "Avaliar a satisfação final"]], ["Indicadores de inovação", "Indicadores são medidas que mostram se uma mudança trouxe resultados, como acompanhar o placar de um jogo. Há indicadores de adoção (quantos usam a novidade), satisfação (se gostaram), finanças (se o resultado melhorou) e eficiência (menos tempo e menos erros). Comparar resultados ajuda a decidir os próximos ajustes.", "Depois de reorganizar as entregas, verificar se os atrasos diminuíram.", "Para que servem os indicadores e quais são os quatro tipos citados?", ["Perguntar se os clientes gostaram da novidade mede qual indicador?", "Satisfação", "Adoção", "Finanças", "Eficiência"]], ["Inovação aberta", "Na inovação aberta, a empresa busca conhecimentos e soluções também fora dela, colaborando com clientes, universidades, startups e outras empresas. Parcerias, desafios de ideias e crowdsourcing, que é receber contribuições de muitas pessoas, ajudam. Traz agilidade e conhecimento, mas exige confiança, acordos claros e proteção das criações.", "Um negócio de marmitas colabora com estudantes de tecnologia para criar um sistema de pedidos.", "O que é inovação aberta e quais cuidados ela exige?", ["O que é crowdsourcing?", "Receber contribuições de muitas pessoas", "Comprar uma empresa concorrente", "Patentear uma ideia", "Terceirizar a limpeza"]], ["Necessidades dos clientes", "Antes de criar um produto ou serviço, é preciso descobrir qual problema o cliente realmente enfrenta. Podemos fazer entrevistas e questionários, observar o uso, analisar reclamações e pesquisar a concorrência. Ignorar essa etapa aumenta o risco de criar algo que as pessoas não querem usar.", "Se a comida agrada, mas a entrega demora, melhorar só o sabor não resolve o principal problema.", "Como descobrir as necessidades reais dos clientes e por que isso vem antes de criar a solução?", ["A comida agrada, mas a entrega demora. O que fazer?", "Resolver a demora, que é o problema real", "Melhorar apenas o sabor", "Aumentar o preço", "Ignorar, pois a comida agrada"]], ["Protótipos", "Um protótipo é uma versão simplificada de uma ideia, feita para aprender e testar antes da versão final. Pode ser físico, como um modelo de embalagem, ou digital, como a simulação de um aplicativo. Um serviço pode ser testado com uma encenação. Os usuários experimentam e apontam dificuldades, o que reduz o risco de investir em algo com falhas.", "Desenhar as telas de um aplicativo de pedidos e pedir que alguém tente usá-las.", "O que é um protótipo e como ele reduz riscos?", ["Para que serve um protótipo?", "Testar e aprender com uma versão simples antes da versão final", "Substituir a versão final", "Registrar a marca", "Calcular o lucro"]], ["Planejamento da implementação", "Depois dos testes, é preciso organizar como a solução entrará em funcionamento. Respondemos: o que será feito, quem fará, quando, quanto custará e o que será necessário em materiais, equipamentos e conhecimentos.", "Para lançar uma embalagem, definir quem vai comprar, quanto pode gastar e quando começam os testes e o uso.", "Quais perguntas devem ser respondidas ao planejar uma implementação?", ["No planejamento da implementação, qual pergunta trata do orçamento?", "Quanto custará?", "Quem fará?", "Quando?", "O que será feito?"]], ["Métodos ágeis", "Os métodos ágeis organizam o trabalho com colaboração, entregas frequentes e ajustes conforme o aprendizado. A equipe trabalha em pequenas etapas, testa soluções e ouve o cliente, e o planejamento pode mudar quando surgem novas informações.", "Oferecer primeiro um cardápio pequeno, ouvir os compradores e ajustar antes de ampliar.", "Quais são as principais características dos métodos ágeis?", ["Qual exemplo representa uma abordagem ágil?", "Oferecer um cardápio pequeno, ouvir os clientes e ajustar", "Planejar tudo por um ano sem mudar nada", "Lançar tudo sem testar", "Ignorar as opiniões dos compradores"]], ["Scrum", "O Scrum organiza o trabalho em ciclos curtos chamados Sprints, em que a equipe busca um objetivo e entrega algo útil. O Product Owner cuida do valor e das prioridades; o Scrum Master ajuda a aplicar o Scrum e a lidar com impedimentos; os Desenvolvedores realizam o trabalho. A equipe planeja, acompanha, revisa e conversa sobre como melhorar.", "Em um ciclo, o grupo prepara e testa um novo processo de pedidos.", "O que é uma Sprint e qual o papel de cada integrante do Scrum?", ["No Scrum, quem cuida do valor e das prioridades?", "Product Owner", "Scrum Master", "Desenvolvedores", "O cliente final"]], ["Kanban", "O Kanban ajuda a visualizar tarefas e melhorar o fluxo de trabalho. O quadro simples tem três colunas: A fazer, Em andamento e Concluído. Cada tarefa muda de coluna conforme avança. Limitar o que está em andamento ajuda a terminar o que começou e a perceber atrasos.", "Definir o cardápio está concluído; preparar as marmitas, em andamento; comprar embalagens, a fazer.", "Quais são as colunas do Kanban e por que limitar as tarefas em andamento?", ["Por que limitar as tarefas em andamento no Kanban?", "Para concluir o que começou e perceber atrasos", "Para trabalhar menos", "Para eliminar o quadro", "Para criar mais colunas"]], ["Jornada do cliente", "A jornada do cliente é o caminho percorrido ao conhecer, comprar e usar um produto ou serviço, incluindo o pós-venda. Cada interação é um ponto de contato e pode gerar uma experiência positiva, neutra ou negativa.", "O cliente vê uma publicação, consulta o cardápio, tira dúvidas, pede, paga, recebe a refeição e envia uma avaliação.", "O que é a jornada do cliente e o que são pontos de contato?", ["O que é ponto de contato na jornada do cliente?", "Cada interação do cliente com o negócio", "O endereço da loja", "Apenas o momento da compra", "O telefone do dono"]], ["Serviços e feedback", "Serviços podem ser testados antes de uma mudança definitiva, com storyboard (sequência de desenhos), fluxograma (etapas), esboços de telas e encenações. Feedback é a opinião de quem usou o serviço, coletada em conversas, pesquisas e avaliações. Analisamos, corrigimos falhas e testamos de novo.", "Se o teste mostra que falta confirmação do pedido, a equipe inclui uma mensagem com os itens e a previsão de entrega.", "Como testar um serviço e usar o feedback para melhorá-lo?", ["O que é um storyboard?", "Uma sequência de desenhos que mostra o serviço", "Um meio de pagamento", "Uma planilha de custos", "Um relatório de estoque"]]]},T=S.t,syn=window.speechSynthesis;
+const $=i=>document.getElementById(i),m=$('m'),st=$('st');
+let mode='s',tok=0,pl=false,pa=false,L=[],k=0,qu=[],qx=0,sc=0,miss=[],cur=null;
+$('h').textContent=S.n;
+function say(text,done){if(!syn)return;syn.cancel();const my=++tok,u=new SpeechSynthesisUtterance(text);u.lang='pt-BR';u.rate=+$('rate').value;const v=syn.getVoices().find(v=>/^pt-br/i.test(v.lang));if(v)u.voice=v;u.onend=()=>{if(my===tok&&done)done()};syn.speak(u)}
+function stop(){tok++;if(syn)syn.cancel();pl=false;pa=false;document.querySelectorAll('article.on').forEach(a=>a.classList.remove('on'));st.textContent='';$('pp').textContent='⏸ Pausar'}
+function txt(t){return t[0]+". "+t[1]+" Exemplo: "+t[2]+" Pergunta geral: "+t[3]}
+function study(){
+ mode='s';stop();$('ts').setAttribute('aria-selected',true);$('tq').setAttribute('aria-selected',false);$('cs').hidden=false;$('cq').hidden=true;
+ m.innerHTML=T.map((t,i)=>`<article id="a${i}"><div class="tag">Tema ${i+1} de ${T.length}</div><h2>${t[0]}</h2><p>${t[1]}</p><p class="ex"><b>Exemplo:</b> ${t[2]}</p><p class="q"><b>Pergunta geral:</b> ${t[3]}</p><button data-i="${i}">🔊 Ouvir este tema</button></article>`).join('');
+}
+function play(list){
+ stop();pl=true;L=list;k=0;
+ (function nx(){if(!pl||k>=L.length){stop();return}const i=L[k++];
+  document.querySelectorAll('article.on').forEach(a=>a.classList.remove('on'));
+  const a=$('a'+i);a.classList.add('on');a.scrollIntoView({behavior:'smooth',block:'center'});st.textContent='Lendo tema '+(i+1);
+  say(txt(T[i]),nx)})();
+}
+const sh=a=>a.slice().sort(()=>Math.random()-.5);
+function startQ(ids){
+ mode='q';stop();$('tq').setAttribute('aria-selected',true);$('ts').setAttribute('aria-selected',false);$('cs').hidden=true;$('cq').hidden=false;
+ qu=sh(ids);qx=0;sc=0;miss=[];showQ();
+}
+function showQ(){
+ if(qx>=qu.length)return endQ();
+ const i=qu[qx],z=T[i][4],o=sh([1,2,3,4]);cur={i,o,done:false};
+ m.innerHTML=`<div class="box"><div class="tag">Pergunta ${qx+1} de ${qu.length} · Acertos: ${sc}</div><h2>${z[0]}</h2>`+
+  o.map((j,n)=>`<button class="opt" data-n="${n}">${'ABCD'[n]}) ${z[j]}</button>`).join('')+
+  `<div class="fb" id="fb" aria-live="polite"></div><button id="rd">🔊 Ouvir pergunta</button> <button id="nx" hidden>Próxima ▶</button></div>`;
+ if($('auto').checked)readQ();
+}
+function readQ(){const z=T[cur.i][4];say(z[0]+". "+cur.o.map((j,n)=>"Alternativa "+'ABCD'[n]+": "+z[j]).join(". "))}
+function answer(n){
+ if(cur.done)return;cur.done=true;const z=T[cur.i][4],right=cur.o.indexOf(1),ok=n===right;
+ document.querySelectorAll('.opt').forEach((b,x)=>{b.disabled=true;if(x===right){b.classList.add('ok');b.textContent='✓ '+b.textContent}else if(x===n){b.classList.add('no');b.textContent='✗ '+b.textContent}});
+ let f;if(ok){sc++;f='Correto!'}else{miss.push(cur.i);f='Não foi dessa vez. Resposta certa: alternativa '+'ABCD'[right]+'. Revise o tema: '+T[cur.i][0]+'.'}
+ $('fb').textContent=f;$('nx').hidden=false;$('nx').focus();
+ if($('auto').checked)say(f+" Toque em próxima para continuar.");
+}
+function endQ(){
+ stop();const p=Math.round(100*sc/qu.length);
+ m.innerHTML=`<div class="box"><div class="tag">Quiz finalizado</div><div class="big">${sc} de ${qu.length} (${p}%)</div><p>${p>=80?'Excelente! Você domina bem esta matéria.':p>=50?'Bom caminho. Revise os temas errados e tente de novo.':'Vale reler a matéria no modo Estudar e refazer o quiz.'}</p>`+
+ (miss.length?`<p><b>Temas para revisar:</b></p><ul>${miss.map(i=>`<li>${T[i][0]}</li>`).join('')}</ul><button class="play" id="rm">Refazer só as erradas</button> `:'')+
+ `<button id="ra">Refazer tudo</button> <button id="gs">Voltar a estudar</button></div>`;
+ if($('auto').checked)say("Quiz finalizado. Você acertou "+sc+" de "+qu.length+".");
+}
+m.onclick=e=>{const b=e.target.closest('button');if(!b)return;
+ if(b.dataset.i!==undefined&&syn)play([+b.dataset.i]);
+ else if(b.classList.contains('opt'))answer(+b.dataset.n);
+ else if(b.id==='nx'){qx++;showQ()}
+ else if(b.id==='rd')readQ();
+ else if(b.id==='rm')startQ(miss.slice());
+ else if(b.id==='ra')startQ(T.map((_,i)=>i));
+ else if(b.id==='gs')study();
+};
+$('ts').onclick=study;$('tq').onclick=()=>startQ(T.map((_,i)=>i));
+$('all').onclick=()=>{if(syn)play(T.map((_,i)=>i))};
+$('stop').onclick=stop;
+$('pp').onclick=function(){if(!pl)return;if(pa){syn.resume();pa=false;this.textContent='⏸ Pausar'}else{syn.pause();pa=true;this.textContent='▶ Continuar'}};
+$('rate').onchange=()=>{if(pl&&!pa){const r=L.slice(k-1);play(r)}};
+if(!syn)st.textContent='Seu navegador não suporta leitura em voz alta.';
+study();
+</script>
+</body>
+</html>

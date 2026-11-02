@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Planejamento financeiro e orçamento empresarial – Estudo e quiz</title>
+<style>
+:root{--bg:#f3f6f4;--card:#fff;--ink:#16302b;--mut:#51655f;--ac:#0f766e;--ac2:#e0f2ef;--q:#fff4d6;--qi:#5c4300;--ln:#cfdcd7;--ok:#d9f2df;--okb:#1a7f3c;--no:#fde0dd;--nob:#b3261e;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10201d;--card:#183029;--ink:#e6f1ee;--mut:#9db5ae;--ac:#4fd1c0;--ac2:#1f4039;--q:#3a3015;--qi:#f3dc9a;--ln:#2d4a43;--ok:#1b4a2c;--okb:#6fdc8c;--no:#4d2420;--nob:#ff9a90}}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Georgia,"Times New Roman",serif}
+h1,h2,button,select,.tag{font-family:"Trebuchet MS",Verdana,sans-serif}
+header{padding:28px 18px 8px;max-width:820px;margin:auto}
+h1{margin:0 0 6px;font-size:1.7rem;line-height:1.2}
+header p{margin:0;color:var(--mut)}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--ln);padding:10px 18px}
+.bar>div{max-width:820px;margin:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+button,select{font-size:.95rem;border:1px solid var(--ln);background:var(--card);color:var(--ink);border-radius:8px;padding:8px 12px;cursor:pointer}
+button:focus-visible,select:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+.tab[aria-selected=true]{background:var(--ac);color:#fff;border-color:var(--ac)}
+@media (prefers-color-scheme:dark){.tab[aria-selected=true]{color:#06231f}}
+.play{background:var(--ac2);font-weight:700}
+main{max-width:820px;margin:auto;padding:14px 18px 60px}
+article,.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:18px;margin:0 0 16px}
+article.on{border-color:var(--ac);box-shadow:0 0 0 3px var(--ac2)}
+h2{margin:0 0 8px;font-size:1.2rem}
+.tag{font-size:.8rem;color:var(--mut);margin-bottom:2px}
+article p,.box p{margin:0 0 10px;max-width:70ch}
+.ex{border-left:4px solid var(--ac);padding-left:12px;color:var(--mut)}
+.q{background:var(--q);color:var(--qi);border-radius:8px;padding:10px 12px}
+.opt{display:block;width:100%;text-align:left;margin:0 0 8px;padding:12px 14px;font-size:1rem;font-family:Georgia,serif}
+.opt.ok{background:var(--ok);border-color:var(--okb)}
+.opt.no{background:var(--no);border-color:var(--nob)}
+.fb{margin:10px 0;font-weight:700;font-family:"Trebuchet MS",Verdana,sans-serif}
+.big{font-size:2rem;font-weight:700;font-family:"Trebuchet MS",Verdana,sans-serif}
+#st{font-size:.9rem;color:var(--mut)}
+</style>
+</head>
+<body>
+<header><h1 id="h"></h1><p>Ensino Médio Técnico em Administração, 4º bimestre. Leia, escute ou teste o que aprendeu.</p></header>
+<div class="bar"><div>
+<button class="tab" role="tab" id="ts">Estudar</button>
+<button class="tab" role="tab" id="tq">Quiz</button>
+</div><div style="margin-top:8px">
+<span id="cs"><button class="play" id="all">▶ Ouvir tudo</button> <button id="pp">⏸ Pausar</button> <button id="stop">⏹ Parar</button></span>
+<label id="cq" hidden><input type="checkbox" id="auto"> Ler as perguntas em voz alta</label>
+<label>Velocidade <select id="rate"><option value="0.8">Lenta</option><option value="1" selected>Normal</option><option value="1.25">Rápida</option></select></label>
+<span id="st" aria-live="polite"></span>
+</div></div>
+<main id="m"></main>
+<script>
+const S={"n": "Planejamento financeiro e orçamento empresarial", "t": [["Investimentos e gestão de riscos", "Investir é colocar dinheiro em algo esperando um benefício futuro. Retorno é o ganho ou a perda. Risco é a incerteza do resultado. Retorno esperado é uma estimativa, sem garantia. Desvio padrão mede quanto os retornos variam em relação à média: maior variação indica maior incerteza.", "Comprar materiais para fazer pulseiras e vender: o ganho esperado é uma possibilidade, não uma promessa.", "O que são retorno, risco e desvio padrão?", ["O que o desvio padrão mede?", "Quanto os retornos variam em relação à média", "O lucro total", "O preço de um ativo", "O prazo do investimento"]], ["Perfil financeiro", "O perfil financeiro mostra nossos hábitos ao receber, gastar e guardar dinheiro. Comprar por impulso é decidir sem pensar no orçamento. Fazer listas, comparar preços e registrar gastos são hábitos de organização. Guardar uma parte ajuda em compras futuras e imprevistos. Os hábitos podem mudar com aprendizado e prática.", "Duas pessoas recebem R$ 50: uma gasta tudo no mesmo dia, a outra guarda R$ 20 para depois.", "O que é perfil financeiro e como os hábitos podem melhorar?", ["Comprar por impulso é:", "Decidir uma compra sem pensar antes no orçamento", "Guardar dinheiro para um objetivo", "Comparar preços", "Anotar os gastos"]], ["Planejamento financeiro", "Planejar é decidir como usar o dinheiro para atender necessidades e alcançar objetivos, como organizar uma viagem: é preciso saber aonde ir e quanto custa. Conheça o dinheiro disponível, defina prioridades, evite gastos que não consegue pagar, separe recursos para metas e imprevistos e acompanhe o plano.", "Para um tênis de R$ 200, guardar R$ 40 por mês leva cinco meses, sem considerar rendimentos ou mudança de preço.", "Quais são os passos do planejamento financeiro?", ["Um tênis de R$ 200, guardando R$ 40 por mês. Em quantos meses?", "5", "4", "6", "8"]], ["Objetivos de curto, médio e longo prazo", "Os objetivos são organizados pelo tempo necessário. Curto prazo: necessidades próximas, como as contas do mês. Médio prazo: metas que exigem preparação, como juntar para um computador. Longo prazo: construídos em vários anos, como a reserva para aposentadoria. A classificação depende da realidade de cada pessoa ou empresa.", "Pagar uma conta esta semana pede ação imediata; comprar um equipamento depois permite economizar por meses.", "Como classificar objetivos por prazo e por que isso ajuda a decidir quanto guardar?", ["Juntar dinheiro para comprar um computador é um objetivo de:", "Médio prazo", "Curto prazo", "Longo prazo", "Nenhum prazo"]], ["Ferramentas de organização financeira", "Orçamento planeja receitas e gastos; fluxo de caixa acompanha entradas, saídas e datas. Planilhas organizam e calculam; aplicativos facilitam o acompanhamento. A regra 50/30/20 sugere 50% para necessidades, 30% para desejos e 20% para guardar, e deve ser adaptada. O método dos seis potes divide o dinheiro por finalidade.", "Anotar os gastos da semana mostra quais compras consomem mais dinheiro.", "Qual a diferença entre orçamento e fluxo de caixa, e o que propõe a regra 50/30/20?", ["O que sugere a regra 50/30/20?", "50% necessidades, 30% desejos e 20% para guardar", "50% desejos, 30% necessidades e 20% para guardar", "50% para guardar, 30% necessidades e 20% desejos", "Dividir o dinheiro igualmente em três"]], ["Orçamento empresarial", "É um plano que estima quanto a empresa vai receber e gastar em um período. Receita é o valor das vendas ou serviços; custo é o gasto ligado à produção; despesa é o gasto com administração e funcionamento. Para apurar o lucro, consideram-se todos os custos e despesas.", "R$ 1.000 em vendas, menos R$ 400 de custos e R$ 200 de despesas, dá R$ 400 de resultado previsto.", "Qual a diferença entre receita, custo e despesa, e por que vender muito não significa ter lucro?", ["Vendas de R$ 1.000, custos de R$ 400 e despesas de R$ 200. Qual o resultado previsto?", "R$ 400", "R$ 600", "R$ 200", "R$ 1.000"]], ["Orçamento estático e flexível", "O orçamento estático mantém os valores do plano original durante todo o período. O flexível ajusta os valores previstos ao volume de vendas ou de produção. Mais produção pode exigir mais ingredientes, mas gastos como o aluguel podem continuar iguais.", "Ao produzir mais brigadeiros, o orçamento flexível prevê mais ingredientes; o aluguel não muda.", "Qual a diferença entre orçamento estático e flexível?", ["O que diferencia o orçamento flexível do estático?", "Ajusta os valores previstos ao volume de atividade", "Nunca muda durante o período", "Ignora os custos", "Só vale para pessoas"]], ["Como elaborar um orçamento", "Elaborar um orçamento é organizar o que a empresa espera receber, o que vai pagar e quando. Os passos: prever as receitas, estimar custos e despesas, definir metas financeiras e montar o fluxo de caixa previsto, com as datas de entradas e saídas.", "Vender hoje e receber só no mês seguinte exige cuidado com as contas que vencem antes.", "Quais são os quatro passos para elaborar um orçamento e por que as datas importam?", ["Qual é o primeiro passo para elaborar um orçamento?", "Prever as receitas", "Montar o fluxo de caixa previsto", "Definir as metas", "Estimar as despesas"]], ["Uso do Excel no orçamento", "O Excel funciona como um caderno organizado que também calcula. Registre receitas e gastos em linhas e colunas, use fórmulas para somar e calcular resultados, compare planejado e realizado, calcule diferenças e crie gráficos. A planilha facilita o trabalho, mas depende de informações corretas.", "Previsto: R$ 1.000 de vendas e R$ 600 de gastos, resultado de R$ 400. Realizado: R$ 900 e R$ 650, resultado de R$ 250, ou R$ 150 abaixo do previsto.", "Como o Excel ajuda a comparar o planejado com o realizado?", ["Previsto: resultado de R$ 400. Realizado: R$ 250. Qual a diferença?", "R$ 150 abaixo do previsto", "R$ 150 acima do previsto", "R$ 250 abaixo do previsto", "R$ 650 acima do previsto"]], ["Monitoramento e controle orçamentário", "Monitorar é acompanhar com frequência se o plano está funcionando, para agir antes que o problema cresça. Orçado é o que foi planejado; realizado é o que aconteceu. Compare vendas e gastos com os valores previstos, investigue as diferenças e decida os ajustes.", "É como acompanhar as notas durante o bimestre: perceber a dificuldade cedo permite corrigir antes da avaliação final.", "O que significam orçado e realizado e por que acompanhar com frequência?", ["O que significa “orçado”?", "O que foi planejado", "O que aconteceu de verdade", "O lucro obtido", "Uma despesa extra"]], ["Indicadores de desempenho", "Indicadores são números que mostram resultados, mas precisam de explicação. Percentual realizado é realizado dividido por planejado vezes 100. Variação percentual é realizado menos planejado, dividido pelo planejado, vezes 100. Receita acima do previsto pode ser favorável; despesa acima pode exigir atenção; gastar menos pode ser economia ou uma atividade importante não feita.", "Planejado R$ 1.000, vendido R$ 900: 90% da previsão e variação de menos 10%.", "Como calcular o percentual realizado e a variação percentual?", ["Planejado: R$ 1.000. Vendido: R$ 900. Qual o percentual realizado?", "90%", "10%", "110%", "900%"]], ["Desvios e revisão do orçamento", "Desvio orçamentário é a diferença entre o planejado e o realizado, favorável ou desfavorável. Investigue a causa, como mudança de preço, aumento de produção, desperdício ou erro de previsão. Escolha ações, como negociar preços ou reduzir desperdícios, revise o orçamento e registre os resultados.", "Embalagens previstas em R$ 200 e realizadas em R$ 260: R$ 60 acima do previsto. Antes de cortar, entenda o motivo.", "O que é desvio orçamentário e o que fazer ao encontrá-lo?", ["Embalagens previstas em R$ 200 e gastas R$ 260. O que fazer primeiro?", "Investigar a causa do desvio", "Cortar todas as despesas", "Trocar a equipe", "Ignorar a diferença"]], ["Comunicação dos resultados financeiros", "Comunicar resultados é explicar os números de modo que as pessoas entendam e usem para decidir. Mostre o previsto e o que aconteceu, explique as causas das diferenças, apresente as ações e use linguagem simples, tabelas e gráficos claros.", "Em vez de dizer que a despesa aumentou, diga: gastamos R$ 100 a mais com energia porque as máquinas funcionaram por mais horas.", "O que não pode faltar ao comunicar resultados financeiros?", ["Ao comunicar resultados financeiros, o melhor é:", "Explicar as causas e as ações previstas", "Mostrar apenas números", "Esconder as diferenças", "Usar termos bem difíceis"]], ["Orçamento Base Zero (OBZ)", "No OBZ, cada gasto precisa ser justificado de novo a cada ciclo de planejamento. A pergunta principal é: por que precisamos gastar com isso agora? O orçamento tradicional parte dos valores anteriores; o OBZ reavalia a necessidade de cada gasto. As prioridades orientam os recursos, e um investimento maior pode ser aprovado se necessário aos objetivos.", "A empresa paga por três programas e usa dois: após revisar, pode cancelar o que não usa.", "Qual a diferença entre o orçamento tradicional e o OBZ?", ["Qual é a pergunta-chave do Orçamento Base Zero?", "Por que precisamos desse gasto agora?", "Quanto gastamos no ano passado?", "Quanto podemos aumentar?", "Quem aprovou o gasto antes?"]], ["Como aplicar o OBZ", "Aplicar o OBZ exige conhecer as necessidades da empresa e avaliar como cada gasto contribui para os objetivos. Passos: definir objetivo e responsáveis; listar e analisar os gastos atuais; justificar e priorizar conforme necessidade e benefícios; aprovar e acompanhar com planilhas, sistemas e indicadores.", "Uma empresa de entregas gasta muito com combustível e reorganiza as rotas para evitar trajetos desnecessários.", "Quais são os quatro passos para aplicar o OBZ?", ["Qual é o primeiro passo para aplicar o OBZ?", "Definir o objetivo e os responsáveis", "Aprovar e acompanhar", "Justificar e priorizar", "Listar e analisar os gastos"]]]},T=S.t,syn=window.speechSynthesis;
+const $=i=>document.getElementById(i),m=$('m'),st=$('st');
+let mode='s',tok=0,pl=false,pa=false,L=[],k=0,qu=[],qx=0,sc=0,miss=[],cur=null;
+$('h').textContent=S.n;
+function say(text,done){if(!syn)return;syn.cancel();const my=++tok,u=new SpeechSynthesisUtterance(text);u.lang='pt-BR';u.rate=+$('rate').value;const v=syn.getVoices().find(v=>/^pt-br/i.test(v.lang));if(v)u.voice=v;u.onend=()=>{if(my===tok&&done)done()};syn.speak(u)}
+function stop(){tok++;if(syn)syn.cancel();pl=false;pa=false;document.querySelectorAll('article.on').forEach(a=>a.classList.remove('on'));st.textContent='';$('pp').textContent='⏸ Pausar'}
+function txt(t){return t[0]+". "+t[1]+" Exemplo: "+t[2]+" Pergunta geral: "+t[3]}
+function study(){
+ mode='s';stop();$('ts').setAttribute('aria-selected',true);$('tq').setAttribute('aria-selected',false);$('cs').hidden=false;$('cq').hidden=true;
+ m.innerHTML=T.map((t,i)=>`<article id="a${i}"><div class="tag">Tema ${i+1} de ${T.length}</div><h2>${t[0]}</h2><p>${t[1]}</p><p class="ex"><b>Exemplo:</b> ${t[2]}</p><p class="q"><b>Pergunta geral:</b> ${t[3]}</p><button data-i="${i}">🔊 Ouvir este tema</button></article>`).join('');
+}
+function play(list){
+ stop();pl=true;L=list;k=0;
+ (function nx(){if(!pl||k>=L.length){stop();return}const i=L[k++];
+  document.querySelectorAll('article.on').forEach(a=>a.classList.remove('on'));
+  const a=$('a'+i);a.classList.add('on');a.scrollIntoView({behavior:'smooth',block:'center'});st.textContent='Lendo tema '+(i+1);
+  say(txt(T[i]),nx)})();
+}
+const sh=a=>a.slice().sort(()=>Math.random()-.5);
+function startQ(ids){
+ mode='q';stop();$('tq').setAttribute('aria-selected',true);$('ts').setAttribute('aria-selected',false);$('cs').hidden=true;$('cq').hidden=false;
+ qu=sh(ids);qx=0;sc=0;miss=[];showQ();
+}
+function showQ(){
+ if(qx>=qu.length)return endQ();
+ const i=qu[qx],z=T[i][4],o=sh([1,2,3,4]);cur={i,o,done:false};
+ m.innerHTML=`<div class="box"><div class="tag">Pergunta ${qx+1} de ${qu.length} · Acertos: ${sc}</div><h2>${z[0]}</h2>`+
+  o.map((j,n)=>`<button class="opt" data-n="${n}">${'ABCD'[n]}) ${z[j]}</button>`).join('')+
+  `<div class="fb" id="fb" aria-live="polite"></div><button id="rd">🔊 Ouvir pergunta</button> <button id="nx" hidden>Próxima ▶</button></div>`;
+ if($('auto').checked)readQ();
+}
+function readQ(){const z=T[cur.i][4];say(z[0]+". "+cur.o.map((j,n)=>"Alternativa "+'ABCD'[n]+": "+z[j]).join(". "))}
+function answer(n){
+ if(cur.done)return;cur.done=true;const z=T[cur.i][4],right=cur.o.indexOf(1),ok=n===right;
+ document.querySelectorAll('.opt').forEach((b,x)=>{b.disabled=true;if(x===right){b.classList.add('ok');b.textContent='✓ '+b.textContent}else if(x===n){b.classList.add('no');b.textContent='✗ '+b.textContent}});
+ let f;if(ok){sc++;f='Correto!'}else{miss.push(cur.i);f='Não foi dessa vez. Resposta certa: alternativa '+'ABCD'[right]+'. Revise o tema: '+T[cur.i][0]+'.'}
+ $('fb').textContent=f;$('nx').hidden=false;$('nx').focus();
+ if($('auto').checked)say(f+" Toque em próxima para continuar.");
+}
+function endQ(){
+ stop();const p=Math.round(100*sc/qu.length);
+ m.innerHTML=`<div class="box"><div class="tag">Quiz finalizado</div><div class="big">${sc} de ${qu.length} (${p}%)</div><p>${p>=80?'Excelente! Você domina bem esta matéria.':p>=50?'Bom caminho. Revise os temas errados e tente de novo.':'Vale reler a matéria no modo Estudar e refazer o quiz.'}</p>`+
+ (miss.length?`<p><b>Temas para revisar:</b></p><ul>${miss.map(i=>`<li>${T[i][0]}</li>`).join('')}</ul><button class="play" id="rm">Refazer só as erradas</button> `:'')+
+ `<button id="ra">Refazer tudo</button> <button id="gs">Voltar a estudar</button></div>`;
+ if($('auto').checked)say("Quiz finalizado. Você acertou "+sc+" de "+qu.length+".");
+}
+m.onclick=e=>{const b=e.target.closest('button');if(!b)return;
+ if(b.dataset.i!==undefined&&syn)play([+b.dataset.i]);
+ else if(b.classList.contains('opt'))answer(+b.dataset.n);
+ else if(b.id==='nx'){qx++;showQ()}
+ else if(b.id==='rd')readQ();
+ else if(b.id==='rm')startQ(miss.slice());
+ else if(b.id==='ra')startQ(T.map((_,i)=>i));
+ else if(b.id==='gs')study();
+};
+$('ts').onclick=study;$('tq').onclick=()=>startQ(T.map((_,i)=>i));
+$('all').onclick=()=>{if(syn)play(T.map((_,i)=>i))};
+$('stop').onclick=stop;
+$('pp').onclick=function(){if(!pl)return;if(pa){syn.resume();pa=false;this.textContent='⏸ Pausar'}else{syn.pause();pa=true;this.textContent='▶ Continuar'}};
+$('rate').onchange=()=>{if(pl&&!pa){const r=L.slice(k-1);play(r)}};
+if(!syn)st.textContent='Seu navegador não suporta leitura em voz alta.';
+study();
+</script>
+</body>
+</html>

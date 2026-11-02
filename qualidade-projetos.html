@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Qualidade, responsabilidade e gestão de projetos – Estudo e quiz</title>
+<style>
+:root{--bg:#f3f6f4;--card:#fff;--ink:#16302b;--mut:#51655f;--ac:#0f766e;--ac2:#e0f2ef;--q:#fff4d6;--qi:#5c4300;--ln:#cfdcd7;--ok:#d9f2df;--okb:#1a7f3c;--no:#fde0dd;--nob:#b3261e;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10201d;--card:#183029;--ink:#e6f1ee;--mut:#9db5ae;--ac:#4fd1c0;--ac2:#1f4039;--q:#3a3015;--qi:#f3dc9a;--ln:#2d4a43;--ok:#1b4a2c;--okb:#6fdc8c;--no:#4d2420;--nob:#ff9a90}}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Georgia,"Times New Roman",serif}
+h1,h2,button,select,.tag{font-family:"Trebuchet MS",Verdana,sans-serif}
+header{padding:28px 18px 8px;max-width:820px;margin:auto}
+h1{margin:0 0 6px;font-size:1.7rem;line-height:1.2}
+header p{margin:0;color:var(--mut)}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--ln);padding:10px 18px}
+.bar>div{max-width:820px;margin:auto;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+button,select{font-size:.95rem;border:1px solid var(--ln);background:var(--card);color:var(--ink);border-radius:8px;padding:8px 12px;cursor:pointer}
+button:focus-visible,select:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+.tab[aria-selected=true]{background:var(--ac);color:#fff;border-color:var(--ac)}
+@media (prefers-color-scheme:dark){.tab[aria-selected=true]{color:#06231f}}
+.play{background:var(--ac2);font-weight:700}
+main{max-width:820px;margin:auto;padding:14px 18px 60px}
+article,.box{background:var(--card);border:1px solid var(--ln);border-radius:12px;padding:18px;margin:0 0 16px}
+article.on{border-color:var(--ac);box-shadow:0 0 0 3px var(--ac2)}
+h2{margin:0 0 8px;font-size:1.2rem}
+.tag{font-size:.8rem;color:var(--mut);margin-bottom:2px}
+article p,.box p{margin:0 0 10px;max-width:70ch}
+.ex{border-left:4px solid var(--ac);padding-left:12px;color:var(--mut)}
+.q{background:var(--q);color:var(--qi);border-radius:8px;padding:10px 12px}
+.opt{display:block;width:100%;text-align:left;margin:0 0 8px;padding:12px 14px;font-size:1rem;font-family:Georgia,serif}
+.opt.ok{background:var(--ok);border-color:var(--okb)}
+.opt.no{background:var(--no);border-color:var(--nob)}
+.fb{margin:10px 0;font-weight:700;font-family:"Trebuchet MS",Verdana,sans-serif}
+.big{font-size:2rem;font-weight:700;font-family:"Trebuchet MS",Verdana,sans-serif}
+#st{font-size:.9rem;color:var(--mut)}
+</style>
+</head>
+<body>
+<header><h1 id="h"></h1><p>Ensino Médio Técnico em Administração, 4º bimestre. Leia, escute ou teste o que aprendeu.</p></header>
+<div class="bar"><div>
+<button class="tab" role="tab" id="ts">Estudar</button>
+<button class="tab" role="tab" id="tq">Quiz</button>
+</div><div style="margin-top:8px">
+<span id="cs"><button class="play" id="all">▶ Ouvir tudo</button> <button id="pp">⏸ Pausar</button> <button id="stop">⏹ Parar</button></span>
+<label id="cq" hidden><input type="checkbox" id="auto"> Ler as perguntas em voz alta</label>
+<label>Velocidade <select id="rate"><option value="0.8">Lenta</option><option value="1" selected>Normal</option><option value="1.25">Rápida</option></select></label>
+<span id="st" aria-live="polite"></span>
+</div></div>
+<main id="m"></main>
+<script>
+const S={"n": "Qualidade, responsabilidade e gestão de projetos", "t": [["Gestão da Qualidade", "Um Sistema de Gestão da Qualidade (SGQ) organiza o trabalho para diminuir falhas e atender melhor ao cliente. Ele define como fazer as atividades, conferir os resultados e corrigir problemas. Documentos orientam a equipe e registros mostram o que aconteceu.", "Na lanchonete, o sanduíche às vezes chega frio ou sem ingrediente. Receita padrão, instruções claras e conferência do pedido reduzem essas falhas.", "Para que serve um Sistema de Gestão da Qualidade?", ["Qual é o objetivo de um SGQ?", "Diminuir falhas e atender melhor ao cliente", "Aumentar os preços", "Eliminar os registros", "Substituir a equipe"]], ["ISO 9001", "A ISO 9001 apresenta requisitos para um sistema de gestão da qualidade. Uma auditoria verifica se a organização atende a esses requisitos. A certificação reconhece o sistema de gestão dentro do escopo avaliado. Ela não certifica cada produto e não elimina todos os erros.", "Uma auditoria pode examinar como a lanchonete organiza o preparo, registra reclamações e corrige problemas. O foco está na gestão dos processos.", "O que a ISO 9001 certifica e o que ela não garante?", ["A certificação ISO 9001 reconhece:", "O sistema de gestão dentro do escopo avaliado", "Cada produto individualmente", "A ausência total de erros", "O preço justo"]], ["Ciclo PDCA", "Melhoria contínua é procurar maneiras de fazer melhor. O ciclo PDCA ajuda a transformar um problema em oportunidade de aprendizagem: planejar, fazer, verificar e agir. Depois de agir, a equipe acompanha o resultado e inicia um novo ciclo quando necessário.", "Se os pedidos atrasam, a equipe investiga a causa, testa outra organização da cozinha e mede o tempo de espera. Depois mantém o que funcionou e ajusta as falhas.", "O que significa cada letra do PDCA?", ["Quais são as etapas do PDCA, em ordem?", "Planejar, fazer, verificar e agir", "Pagar, decidir, comprar e avaliar", "Fazer, planejar, agir e verificar", "Verificar, agir, planejar e fazer"]], ["Gestão Ambiental e ISO 14001", "A gestão ambiental organiza os cuidados com os impactos das atividades de uma empresa na natureza. O Sistema de Gestão Ambiental (SGA) ajuda a planejar e acompanhar essas ações. A ISO 14001 apresenta requisitos para esse sistema. Certificação não significa impacto ambiental zero.", "Uma fábrica percebe que gasta muita água, modifica o processo para reduzir o consumo e acompanha os resultados.", "O que é um SGA e o que a ISO 14001 não garante?", ["A ISO 14001 apresenta requisitos para:", "Um Sistema de Gestão Ambiental", "Um sistema de vendas", "A gestão de pessoas", "Um programa de dados pessoais"]], ["Os cinco Rs", "Os recursos naturais precisam de cuidado, e os cinco Rs ajudam a consumir com mais consciência e a evitar desperdícios. Geralmente são: repensar, recusar, reduzir, reutilizar e reciclar. Essas atitudes fazem parte da economia circular, que procura manter produtos e materiais em uso por mais tempo.", "Antes de comprar um caderno novo, veja se o antigo ainda tem páginas. Um pote pode virar porta-lápis. O papel reciclado pode virar matéria-prima.", "Quais são os cinco Rs e o que é economia circular?", ["Transformar um pote em porta-lápis é um exemplo de:", "Reutilizar", "Reciclar", "Recusar", "Repensar"]], ["Resíduos e logística reversa", "Resíduos são materiais que sobram das atividades. A coleta seletiva facilita a separação e o encaminhamento adequado. A logística reversa organiza o retorno de produtos e embalagens após o uso, para reaproveitamento, reciclagem ou destinação adequada.", "Uma pilha usada vai para um ponto de recebimento adequado. Jogá-la no lixo comum não faz o material desaparecer.", "O que é logística reversa?", ["O que é logística reversa?", "O retorno de produtos e embalagens após o uso, para destinação adequada", "A entrega mais rápida ao cliente", "A compra de matéria-prima", "A divulgação de uma marca"]], ["ESG", "ESG reúne responsabilidades ambientais, sociais e de governança. A ideia é observar como a organização trata a natureza, as pessoas e suas próprias decisões. Esses cuidados precisam aparecer nas práticas da empresa.", "Uma empresa reduz o desperdício de água, oferece boas condições de trabalho e explica os critérios usados nas decisões. Assim, atua nas três áreas do ESG.", "Quais são as três áreas do ESG?", ["Oferecer boas condições de trabalho pertence a qual área do ESG?", "Social", "Ambiental", "Governança", "Nenhuma delas"]], ["Responsabilidade social", "Responsabilidade social significa considerar como as ações da empresa afetam as pessoas, o que envolve respeito, segurança, inclusão e diálogo. As partes interessadas, também chamadas de stakeholders, afetam ou são afetadas pela organização.", "Antes de criar um projeto de reciclagem, a empresa conversa com moradores e catadores para compreender as necessidades de quem vai participar.", "O que são stakeholders?", ["O que são stakeholders?", "Partes interessadas que afetam ou são afetadas pela organização", "Apenas os donos da empresa", "Apenas os clientes", "Os concorrentes"]], ["Governança, ética e compliance", "Governança organiza as decisões e a prestação de contas. Ética ajuda a refletir sobre o que é justo e respeitoso. Compliance orienta e acompanha o cumprimento de leis, normas e regras. Esses conceitos se complementam.", "O responsável pelas compras escolhe fornecedores com critérios claros. Favorecer um amigo por interesse pessoal prejudica a confiança.", "Qual a diferença entre governança, ética e compliance?", ["Qual conceito orienta e acompanha o cumprimento de leis e normas?", "Compliance", "Ética", "Marketing", "Inovação"]], ["Proteção de dados e LGPD", "A Lei Geral de Proteção de Dados (LGPD) trata do uso de informações pessoais. Dados pessoais identificam alguém direta ou indiretamente. Informações sensíveis, como dados de saúde e religião, exigem cuidados específicos.", "Uma loja precisa proteger o cadastro de seus clientes. Pense nos dados como objetos pessoais: não devem ficar espalhados nem ser usados sem os cuidados necessários.", "O que a LGPD protege e o que são dados sensíveis?", ["Qual destes é um dado sensível?", "Informação sobre saúde", "O nome de uma loja", "O preço de um produto", "O horário de funcionamento"]], ["Gestão de riscos", "Incerteza é não saber exatamente o que acontecerá. Risco é o efeito dessa incerteza sobre um objetivo. Gerenciar riscos ajuda a identificar situações, avaliar consequências e preparar respostas, e o acompanhamento continua durante o trabalho.", "A turma prepara uma feira ao ar livre. A chuva pode atrapalhar o evento, e reservar um espaço coberto reduz esse risco.", "O que é risco e como gerenciá-lo?", ["Na feira ao ar livre, reservar um espaço coberto serve para:", "Reduzir o risco da chuva", "Aumentar os custos sem motivo", "Eliminar a feira", "Ignorar a incerteza"]], ["Métodos tradicionais e ágeis", "Os métodos de gestão ajudam a organizar projetos. O tradicional dá maior ênfase ao planejamento antecipado. Os métodos ágeis trabalham com entregas menores e ajustes frequentes. A escolha depende do projeto e das necessidades da equipe.", "A turma cria uma primeira versão de um catálogo, mostra aos clientes e usa os comentários para melhorar. Ser ágil envolve aprender e adaptar, além de entregar valor.", "Qual a diferença entre métodos tradicionais e ágeis?", ["Os métodos ágeis se caracterizam por:", "Entregas menores e ajustes frequentes", "Planejamento fechado e sem mudanças", "Ausência de equipe", "Entrega única no final do ano"]], ["Scrum e trabalho em equipe", "Scrum é uma estrutura que organiza o trabalho em ciclos curtos, em que a equipe aprende com a experiência e melhora sua forma de trabalhar. Uma equipe multifuncional reúne habilidades diferentes para produzir uma entrega útil. No Scrum, desenvolvedores são quem constrói a entrega, mesmo sem programação.", "Em um catálogo, uma pessoa escreve, outra fotografa e outra organiza as páginas. Todas colaboram.", "O que é uma equipe multifuncional no Scrum?", ["No Scrum, quem são os desenvolvedores?", "Todos que constroem a entrega, mesmo sem programar", "Somente programadores", "Somente o gerente", "Os clientes"]], ["Sprint e reuniões", "A Sprint é um ciclo com objetivo e duração definida. A equipe planeja o trabalho, acompanha o avanço e avalia o resultado. Na revisão, observa a entrega com os interessados. Na retrospectiva, melhora a maneira de trabalhar.", "No início do ciclo, o grupo combina o objetivo. Durante o trabalho, ajusta o plano. Ao final, conversa sobre o produto e sobre a colaboração da equipe.", "Qual a diferença entre a revisão e a retrospectiva da Sprint?", ["Qual reunião serve para melhorar a maneira de trabalhar da equipe?", "Retrospectiva", "Revisão", "Planejamento", "Auditoria"]], ["Backlogs e incremento", "Os artefatos do Scrum ajudam a tornar o trabalho claro. O Product Backlog organiza as necessidades por prioridade. O Sprint Backlog reúne o objetivo, os itens escolhidos e o plano. O incremento é um resultado pronto e utilizável.", "O Product Backlog inclui fotos, preços e descrições. A equipe seleciona cinco produtos para a Sprint. A versão do catálogo pronta para os clientes é um incremento.", "Qual a diferença entre Product Backlog, Sprint Backlog e incremento?", ["O que é o incremento?", "Um resultado pronto e utilizável", "A lista de todas as necessidades", "O plano da reunião", "Um relatório de erros"]], ["Kanban", "O Kanban ajuda a enxergar o fluxo de trabalho. Cada cartão representa uma tarefa e muda de posição conforme o avanço. Limitar o trabalho em andamento evita muitas tarefas abertas. Scrum e Kanban são diferentes e podem ser usados juntos.", "No quadro do grupo, escrever descrições está em A fazer, fotografar está em Andamento e escolher o nome está Concluído.", "Como funciona o Kanban e ele é igual ao Scrum?", ["No Kanban, cada cartão representa:", "Uma tarefa", "Um cliente", "Um custo", "Uma reunião"]], ["Escopo, prazos e caminho crítico", "O escopo define o que o projeto entregará e seus limites. Planejar o tempo exige distinguir esforço, duração e prazo. O PERT ajuda a visualizar dependências. O caminho crítico determina a duração total do projeto, considerando a rede planejada.", "Se montar o catálogo depende de receber as fotos, um atraso nas fotos pode atrasar a entrega. Atividades críticas exigem atenção ao prazo.", "O que é escopo e o que é caminho crítico?", ["O que o caminho crítico determina?", "A duração total do projeto", "O custo de cada tarefa", "O número de pessoas", "A cor do relatório"]], ["Lições aprendidas e comunidade", "Lições aprendidas são registros do que funcionou, das dificuldades e das melhorias possíveis. A equipe precisa entender as causas e propor ações. Em projetos comunitários, ouvir os envolvidos ajuda a definir entregas que atendam às necessidades locais.", "Se o catálogo atrasou porque ninguém confirmou os preços, a próxima equipe define um responsável por essa conferência.", "Para que servem as lições aprendidas?", ["Para que servem as lições aprendidas?", "Registrar o que funcionou e as melhorias para os próximos trabalhos", "Punir quem errou", "Aumentar o prazo", "Evitar a comunicação"]]]},T=S.t,syn=window.speechSynthesis;
+const $=i=>document.getElementById(i),m=$('m'),st=$('st');
+let mode='s',tok=0,pl=false,pa=false,L=[],k=0,qu=[],qx=0,sc=0,miss=[],cur=null;
+$('h').textContent=S.n;
+function say(text,done){if(!syn)return;syn.cancel();const my=++tok,u=new SpeechSynthesisUtterance(text);u.lang='pt-BR';u.rate=+$('rate').value;const v=syn.getVoices().find(v=>/^pt-br/i.test(v.lang));if(v)u.voice=v;u.onend=()=>{if(my===tok&&done)done()};syn.speak(u)}
+function stop(){tok++;if(syn)syn.cancel();pl=false;pa=false;document.querySelectorAll('article.on').forEach(a=>a.classList.remove('on'));st.textContent='';$('pp').textContent='⏸ Pausar'}
+function txt(t){return t[0]+". "+t[1]+" Exemplo: "+t[2]+" Pergunta geral: "+t[3]}
+function study(){
+ mode='s';stop();$('ts').setAttribute('aria-selected',true);$('tq').setAttribute('aria-selected',false);$('cs').hidden=false;$('cq').hidden=true;
+ m.innerHTML=T.map((t,i)=>`<article id="a${i}"><div class="tag">Tema ${i+1} de ${T.length}</div><h2>${t[0]}</h2><p>${t[1]}</p><p class="ex"><b>Exemplo:</b> ${t[2]}</p><p class="q"><b>Pergunta geral:</b> ${t[3]}</p><button data-i="${i}">🔊 Ouvir este tema</button></article>`).join('');
+}
+function play(list){
+ stop();pl=true;L=list;k=0;
+ (function nx(){if(!pl||k>=L.length){stop();return}const i=L[k++];
+  document.querySelectorAll('article.on').forEach(a=>a.classList.remove('on'));
+  const a=$('a'+i);a.classList.add('on');a.scrollIntoView({behavior:'smooth',block:'center'});st.textContent='Lendo tema '+(i+1);
+  say(txt(T[i]),nx)})();
+}
+const sh=a=>a.slice().sort(()=>Math.random()-.5);
+function startQ(ids){
+ mode='q';stop();$('tq').setAttribute('aria-selected',true);$('ts').setAttribute('aria-selected',false);$('cs').hidden=true;$('cq').hidden=false;
+ qu=sh(ids);qx=0;sc=0;miss=[];showQ();
+}
+function showQ(){
+ if(qx>=qu.length)return endQ();
+ const i=qu[qx],z=T[i][4],o=sh([1,2,3,4]);cur={i,o,done:false};
+ m.innerHTML=`<div class="box"><div class="tag">Pergunta ${qx+1} de ${qu.length} · Acertos: ${sc}</div><h2>${z[0]}</h2>`+
+  o.map((j,n)=>`<button class="opt" data-n="${n}">${'ABCD'[n]}) ${z[j]}</button>`).join('')+
+  `<div class="fb" id="fb" aria-live="polite"></div><button id="rd">🔊 Ouvir pergunta</button> <button id="nx" hidden>Próxima ▶</button></div>`;
+ if($('auto').checked)readQ();
+}
+function readQ(){const z=T[cur.i][4];say(z[0]+". "+cur.o.map((j,n)=>"Alternativa "+'ABCD'[n]+": "+z[j]).join(". "))}
+function answer(n){
+ if(cur.done)return;cur.done=true;const z=T[cur.i][4],right=cur.o.indexOf(1),ok=n===right;
+ document.querySelectorAll('.opt').forEach((b,x)=>{b.disabled=true;if(x===right){b.classList.add('ok');b.textContent='✓ '+b.textContent}else if(x===n){b.classList.add('no');b.textContent='✗ '+b.textContent}});
+ let f;if(ok){sc++;f='Correto!'}else{miss.push(cur.i);f='Não foi dessa vez. Resposta certa: alternativa '+'ABCD'[right]+'. Revise o tema: '+T[cur.i][0]+'.'}
+ $('fb').textContent=f;$('nx').hidden=false;$('nx').focus();
+ if($('auto').checked)say(f+" Toque em próxima para continuar.");
+}
+function endQ(){
+ stop();const p=Math.round(100*sc/qu.length);
+ m.innerHTML=`<div class="box"><div class="tag">Quiz finalizado</div><div class="big">${sc} de ${qu.length} (${p}%)</div><p>${p>=80?'Excelente! Você domina bem esta matéria.':p>=50?'Bom caminho. Revise os temas errados e tente de novo.':'Vale reler a matéria no modo Estudar e refazer o quiz.'}</p>`+
+ (miss.length?`<p><b>Temas para revisar:</b></p><ul>${miss.map(i=>`<li>${T[i][0]}</li>`).join('')}</ul><button class="play" id="rm">Refazer só as erradas</button> `:'')+
+ `<button id="ra">Refazer tudo</button> <button id="gs">Voltar a estudar</button></div>`;
+ if($('auto').checked)say("Quiz finalizado. Você acertou "+sc+" de "+qu.length+".");
+}
+m.onclick=e=>{const b=e.target.closest('button');if(!b)return;
+ if(b.dataset.i!==undefined&&syn)play([+b.dataset.i]);
+ else if(b.classList.contains('opt'))answer(+b.dataset.n);
+ else if(b.id==='nx'){qx++;showQ()}
+ else if(b.id==='rd')readQ();
+ else if(b.id==='rm')startQ(miss.slice());
+ else if(b.id==='ra')startQ(T.map((_,i)=>i));
+ else if(b.id==='gs')study();
+};
+$('ts').onclick=study;$('tq').onclick=()=>startQ(T.map((_,i)=>i));
+$('all').onclick=()=>{if(syn)play(T.map((_,i)=>i))};
+$('stop').onclick=stop;
+$('pp').onclick=function(){if(!pl)return;if(pa){syn.resume();pa=false;this.textContent='⏸ Pausar'}else{syn.pause();pa=true;this.textContent='▶ Continuar'}};
+$('rate').onchange=()=>{if(pl&&!pa){const r=L.slice(k-1);play(r)}};
+if(!syn)st.textContent='Seu navegador não suporta leitura em voz alta.';
+study();
+</script>
+</body>
+</html>
